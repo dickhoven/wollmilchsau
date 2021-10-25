@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" href="./css/mvp.css">-->
+  <link rel="stylesheet" href="./css/mvp.css">
+  <title>🙉🙊🙈 Inputs Hubi 🙉🙊🙈</title>
+</head>
+
+<body>
+  <main>
+    <form action="index.html" method="post">
+      <label for="agb">
+        <input id="agb" type="checkbox" name="allgemeine-geschaeftabedingungen" required>
+        Ich stimme den AGBs zu.
+      </label>
+      <p>
+        <a href="terms-and-conditions.html">AGBs lesen.</a>
+      </p>
+      <hr>
+      <label for="avatar">Profilbild auswählen:</label>
+
+      <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+      <hr>
+      <label for="checker">Leistungsniveau:</label>
+
+      <meter id="checker" min="0" max="100" low="33" high="66" optimum="80" value="87">
+        at 87/100
+      </meter>
+      <hr>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <label for="pass">Password (8 characters minimum):</label>
+      <input type="password" id="pass" name="password" minlength="8" required>
+      <input type="submit">
+
+    </form>
+  </main>
+</body>
+
+</html>
