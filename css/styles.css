@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+}
+
+h1 {
+  color: #B4846C;
+  font-family: 'Sacramento', cursive;
+  font-size: 10rem;
+  margin: 2.6rem auto 0 auto;
+}
+
+h2 {
+  color: #E5B299;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+h3 {
+  color: #7D5A50;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: #7D5A50;
+  text-decoration: none;
+}
+
+
+hr {
+  border-top-width: 10px;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-top-style: dotted;
+  border-top-color: #7D5A50;
+  width: 10rem;
+}
+
+p {
+  line-height: 2;
+  color: #7D5A50;
+}
+
+/********CLASS *************/
+.bottom-container {
+  background-color: #FCDEC0;
+  position: relative;
+  padding: 100px 0 100px 0;
+}
+
+.bottom-cloud {
+  position: absolute;
+  left: 300px;
+  bottom: 300px;
+}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: red;
+  margin: 20px auto 20px auto;
+}
+
+.btn:hover {
+  background-color: orange;
+}
+
+.contact-me {
+  line-height: 2;
+  margin: 100px auto 100px auto;
+  text-align: left;
+  width: 50%;
+}
+
+.copyright {
+  font-size: 0.8rem;
+}
+
+.footer-link {
+  margin-bottom: 90px;
+  margin-right: 30px;
+  font-size: 1.5rem;
+  font-weight: 100;
+  padding-bottom: 50px;
+}
+
+.footer-link:hover {
+  color: orange;
+}
+
+.img-coding {
+  margin-right: 30px;
+  width: 25%;
+  float: left;
+}
+
+.img-fluttering {
+  margin-left: 30px;
+  width: 25%;
+  float: right;
+}
+
+.middle-container {
+  background-color: #FFFFFF;
+}
+
+.profile {
+  line-height: 2;
+  margin: 100px auto 100px auto;
+  text-align: left;
+  width: 50%;
+}
+
+.skill-row {
+  line-height: 2;
+  margin: 100px auto 100px auto;
+  text-align: left;
+  width: 50%;
+}
+
+.top-cloud {
+  position: absolute;
+  right: 300px;
+  top: 50px;
+}
+
+.top-container {
+  background-color: #FCDEC0;
+  position: relative;
+  padding-top: 0;
+  height: 100vh;
+}
