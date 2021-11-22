@@ -1,5 +1,34 @@
 #title {
-  background-color: #ff4c68;
+  background-color: #CEE5D0;
+}
+
+#features {
+  background-color: #F3F0D7;
+}
+
+#testimonials {
+  background-color: #FED2AA;
+}
+
+
+#testimonials {
+  background-color: #FFBF86;
+}
+
+#press {
+  background-color: #F3F0D7;
+}
+
+#pricing {
+  background-color: #FED2AA;
+}
+
+#cta {
+  background-color: #FFBF86;
+}
+
+#footer {
+  background-color: #CEE5D0;
 }
 
 .container-fluid {
