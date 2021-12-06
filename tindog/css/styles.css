@@ -1,39 +1,20 @@
-#title {
-  background-color: #CEE5D0;
-  color: #fff;
-}
 
-#features {
-  background-color: #F3F0D7;
-}
 
-#testimonials {
+.pricing {
   background-color: #FED2AA;
 }
 
-
-#testimonials {
+.cta {
   background-color: #FFBF86;
 }
 
-#press {
-  background-color: #F3F0D7;
-}
-
-#pricing {
-  background-color: #FED2AA;
-}
-
-#cta {
-  background-color: #FFBF86;
-}
-
-#footer {
+.footer {
   background-color: #CEE5D0;
 }
 
 .container-fluid {
-  padding: 3% 15%;
+  padding: 0;
+  width: 80%;
 }
 
 body {
@@ -46,10 +27,31 @@ h1 {
   line-height: 1.5;
 }
 
+h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+p {
+  color: #8f8f8f;
+}
+
 /* NAVBAR */
 
+.title {
+  background-color: #CEE5D0;
+  color: #fff;
+}
+
 .navbar {
-  padding-bottom: 0 0 4.5rem;
+  padding: 0 0 4.5rem;
 }
 
 .navbar-brand {
@@ -75,4 +77,54 @@ h1 {
 .title-image {
   width: 60%;
   transform: rotate(25deg);
+}
+
+/* FEATURES-SECTION */
+
+.features {
+  background-color: #F3F0D7;
+  padding: 7% 15%;
+}
+
+.feature-box {
+  text-align: center;
+  }
+
+.icon-red {
+  color: red;
+  font-size: 4rem;
+}
+
+.icon-red:hover {
+  color: #CEE5D0;
+}
+
+/* TESTIMONIALS SECTION */
+
+.testimonials {
+  background-color: #FED2AA;
+  padding: 7% 15%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+/* PRESS SECTION */
+
+.press {
+  /* background-color: #F3F0D7; */
+  background-color: #FED2AA;
+  padding: 1% 15%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.press-logo {
+  width: 15%;
+  margin: 20px 20px 50px;
 }
