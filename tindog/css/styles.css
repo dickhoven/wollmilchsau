@@ -1,9 +1,3 @@
-
-
-.pricing {
-  background-color: #FED2AA;
-}
-
 .cta {
   background-color: #FFBF86;
 }
@@ -13,8 +7,7 @@
 }
 
 .container-fluid {
-  padding: 0;
-  width: 80%;
+  padding: 3% 15% 7%;
 }
 
 body {
@@ -44,7 +37,6 @@ p {
 }
 
 /* NAVBAR */
-
 .title {
   background-color: #CEE5D0;
   color: #fff;
@@ -73,22 +65,28 @@ p {
   margin: 5% 3% 5% 0;
 }
 
+/* Title Section */
+.title {
+  position: relative;
+}
+
 /* Title Image */
 .title-image {
-  width: 60%;
+  max-width: 60%;
   transform: rotate(25deg);
+  position: absolute;
 }
 
 /* FEATURES-SECTION */
-
 .features {
   background-color: #F3F0D7;
   padding: 7% 15%;
+  position: relative;
 }
 
 .feature-box {
   text-align: center;
-  }
+}
 
 .icon-red {
   color: red;
@@ -100,12 +98,12 @@ p {
 }
 
 /* TESTIMONIALS SECTION */
-
 .testimonials {
   background-color: #FED2AA;
-  padding: 7% 15%;
   text-align: center;
   color: #ffffff;
+  position: relative;
+  z-index: 1;
 }
 
 .testimonial-image {
@@ -114,8 +112,11 @@ p {
   margin: 20px;
 }
 
-/* PRESS SECTION */
+.carousel-item {
+  padding: 7% 15%;
+}
 
+/* PRESS SECTION */
 .press {
   /* background-color: #F3F0D7; */
   background-color: #FED2AA;
@@ -127,4 +128,29 @@ p {
 .press-logo {
   width: 15%;
   margin: 20px 20px 50px;
+}
+
+/* Price Section */
+.pricing {
+  background-color: #F3F0D7;
+  padding: 1% 15%;
+}
+
+.card img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-body {
+  background-color: #F3F0D7;
+  text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  .title-image {
+    position: static;
+    transform: rotate(0deg);
+  }
 }
