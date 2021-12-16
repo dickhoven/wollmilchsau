@@ -2,6 +2,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* jo Hauptnavigation */
 .jo-toptopnav {
   background-color: #009DAE;
