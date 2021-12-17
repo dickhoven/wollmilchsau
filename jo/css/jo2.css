@@ -1,0 +1,45 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* jo Hauptnavigation */
+.jo-toptopnav {
+  background-color: #009DAE;
+  padding: 2px;
+}
+
+.jo-topnav {
+  background-color: #009DAE;
+  color: white;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+#text{
+    font-size: 60px;
+    font-family: serif;
+    font-weight: bold;
+}
+#carddes{
+    margin-top: -12px;
+}
+#cardpara{
+    color: red;
+}
+#btnslidone{
+    width: 90px;
+}
+#btnslidtwo{
+    width: 90px;
+}
+#mostslid{
+    border-radius: 5px;
+    background-color: black;
+}
