@@ -1,11 +1,3 @@
-.cta {
-  background-color: #FFBF86;
-}
-
-.footer {
-  background-color: #CEE5D0;
-}
-
 .container-fluid {
   padding: 3% 15% 7%;
 }
@@ -153,4 +145,21 @@ p {
     position: static;
     transform: rotate(0deg);
   }
+}
+
+/* CTA Section */
+.cta {
+  padding: 1% 15%;
+  background-color: #FF4c68;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+}
+
+/* Footer Section */
+.footer {
+  padding: 1% 15%;
+  text-align: center;
+  color: white;
+  background-color: #FFF;
 }
