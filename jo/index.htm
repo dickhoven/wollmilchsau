@@ -18,7 +18,12 @@
   <link rel="stylesheet" href="./css/jo.css">
 
   <link rel="icon" href="./favicon.ico">
-
+  <!-- Tiny Slider 2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,10 +61,13 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">joFree<i class="bi bi-lock"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Preise</a>
+              <a class="nav-link" href="#">joFlat<i class="bi bi-lock"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">joTeamFlat<i class="bi bi-lock"></i></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -68,7 +76,9 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="#">Abos</a></li>
                 <li><a class="dropdown-item" href="#">Preise</a></li>
-                <li><a class="dropdown-item" href="#">Hilfeübersicht</a></li>
+                <li><a class="dropdown-item" href="#">FAQ</a></li>
+                <li><a class="dropdown-item" href="#">Videos</a></li>
+                <li><a class="dropdown-item" href="#">Kontakt</a></li>
               </ul>
             </li>
           </ul>
@@ -99,92 +109,14 @@
   <!-- Einleitung jo -->
   <div class="container">
     <h1 class="display-1">Willkommen auf jo 🎁</h1>
-    <p class="lead">Wir teilen gern mit dir! Deshalb gibt es jo. Immer mehr Menschen aus der Praxis stellen auf jo erprobte Inhalte für deine starke Kinder- und Jugendarbeit zur Verfügung. Oft kostenlos, in jedem Fall kostengünstig und nie umsonst! Und das Beste
+    <p class="lead">Wir teilen gern mit dir! Deshalb gibt es jo. Immer mehr Menschen aus der Praxis stellen auf jo erprobte Inhalte für deine starke Kinder- und Jugendarbeit zur Verfügung. Oft kostenlos, in jedem Fall kostengünstig und nie umsonst!
+      Und das Beste
       ist, dass du mit jo tausende Bausteine gemeinsam mit deinem Team nutzen kannst. <br> Wie unser Teilen funktioniert, erklären wir dir <a href="#"> hier</a>.</p>
   </div>
-  <!-- Startseite JO Multicarousel -->
-  <div class="container text-center my-3">
-    <h2 class="font-weight-light">Neues Material</h2>
-    <div class="row mx-auto my-auto justify-content-center">
-      <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-          <div class="carousel-item active">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src="https://via.placeholder.com/500x400/31f?text=1" class="img-fluid">
-                </div>
-                <div class="card-img-overlay">Slide 1</div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src="https://via.placeholder.com/500x400/e66?text=jo" class="img-fluid">
-                </div>
-                <div class="card-img-overlay">Slide 2</div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src="https://via.placeholder.com/500x400/7d2?text=3" class="img-fluid">
-                </div>
-                <div class="card-img-overlay">Slide 3</div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src="https://via.placeholder.com/500x400?text=4" class="img-fluid">
-                </div>
-                <div class="card-img-overlay">Slide 4</div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src="https://via.placeholder.com/500x400/aba?text=5" class="img-fluid">
-                </div>
-                <div class="card-img-overlay">Slide 5</div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-img">
-                  <img src="https://via.placeholder.com/500x400/fc0?text=6" class="img-fluid">
-                </div>
-                <div class="card-img-overlay">Slide 6</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
-      </div>
-    </div>
-    <h5 class="mt-2 fw-light">advances one slide at a time</h5>
-  </div>
-
-  <!-- Test Slick-Alternative -->
 
   <!-- Test Bootstrap Umsetzung -->
   <div class="container">
-    <h1>Neues Material</h1>
+    <h1 class="display-4 mb-5">Neues <span class="text-info">Material</span></h1>
     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 g-4">
       <div class="col">
         <div class="card h-100">
@@ -312,49 +244,283 @@
     </div>
   </div>
 
-  <!-- BOOTSTRAPv2 Cards -->
+  <!-- OwlCarousel2 -->
+  <div class="container my-5">
+    <h1 class="display-4 mb-5">TOP <span class="text-info">Material</span></h1>
+    <div class="row">
+      <div class="col-12 m-auto">
+        <div class="owl-carousel owl-theme">
+          <div class="item mb-4">
+            <div class="card h-100 border-0 shadow">
+              <img src="./img/01.jpg" alt="" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia a, assumenda iusto, vero quod consectetur illo voluptates ad temporibus enim esse aliquid, ex aspernatur natus explicabo odit ullam aperiam dolore.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">EC</small>
+              </div>
+            </div>
+          </div>
+          <div class="item mb-4">
+            <div class="card h-100 border-0 shadow">
+              <img src="./img/03.jpg" alt="" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">EC</small>
+              </div>
+            </div>
+          </div>
+          <div class="item mb-4">
+            <div class="card h-100 border-0 shadow">
+              <img src="./img/04.jpg" alt="" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente doloremque aliquam minus inventore reprehenderit recusandae hic iste minima nam, ipsam nemo, delectus aut adipisci optio id ipsum asperiores
+                  quibusdam dolores!</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">EC</small>
+              </div>
+            </div>
+          </div>
+          <div class="item mb-4">
+            <div class="card h-100 border-0 shadow">
+              <img src="./img/05.jpg" alt="" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, error, animi. Autem omnis dolorum cumque alias, odit
+                  labore asperiores ipsum hic sed, obcaecati officia provident? Doloribus amet ipsum consectetur officia!</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">EC</small>
+              </div>
+            </div>
+          </div>
+          <div class="item mb-4">
+            <div class="card h-100 border-0 shadow">
+              <img src="./img/06.jpg" alt="" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">EC</small>
+              </div>
+            </div>
+          </div>
+          <div class="item mb-4">
+            <div class="card h-100 border-0 shadow">
+              <img src="./img/08.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, consequuntur omnis dignissimos animi dolore perferendis assumenda nobis accusantium doloribus! Saepe harum fuga natus omnis impedit
+                  excepturi odit architecto unde distinctio.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">EC</small>
+              </div>
+            </div>
+          </div>
 
-  <div class="container">
-    <p>&nbsp;</p>
-    <h1>Material Weihnachten</h1>
-    <div class="card" style="width: 18rem;">
-      <img src="./img/08.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+
+        </div>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
-      <img src="./img/08.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div> <!-- OWL Carousel ENDE -->
+
+
+<!-- Preise jo   -->
+<div class="container py-3">
+  <main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">joFree</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">0€<small class="text-muted fw-light">/Jahr</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>1 Nutzer:in</li>
+              <li>Free Content</li>
+              <li><strong>KEIN</strong> Premium Content</li>
+              <li><strong>KEIN</strong> Materialdownload</li>
+              <li><strong>KEINE</strong> Teaminhalte</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Kostenlos registrieren</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">joFlat</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">12€<small class="text-muted fw-light">/Jahr</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>1 Nutzer:in</li>
+              <li>Free Content</li>
+              <li>Premium Content</li>
+              <li>Materialdownload</li>
+              <li><strong>KEINE</strong> Teaminhalte</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-success">Nähere Informationen</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">joTeamFlat</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">ab 25€<small class="text-muted fw-light">/Jahr</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>5/25/50/100 Nutzer:innen</li>
+              <li>Free Content</li>
+              <li>Premium Content</li>
+              <li>Materialdownload</li>
+              <li>Teaminhalte</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-success">Nähere Informationen</button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="card" style="width: 18rem;">
-      <img src="./img/08.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+
+    <h2 class="display-6 text-center mb-4">Vergleich</h2>
+
+    <div class="table-responsive">
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th style="width: 34%;"></th>
+            <th style="width: 22%;">joFree</th>
+            <th style="width: 22%;">joFlat</th>
+            <th style="width: 22%;">joTeamFlat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="text-start">Nutzer:innen</th>
+            <td>1</td>
+            <td>1</td>
+            <td>5 / 25 / 50 / 100</td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Free Content</th>
+            <td><i class="bi bi-check-circle" style="font-size: 2rem; color: green;"></i></td>
+            <td><i class="bi bi-check-circle" style="font-size: 2rem; color: green;"></i></td>
+            <td><i class="bi bi-check-circle" style="font-size: 2rem; color: green;"></i></svg></td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Premium Content</th>
+            <td><i class="bi bi-x-circle" style="font-size: 2rem; color: red;"></i></td>
+            <td><i class="bi bi-check-circle" style="font-size: 2rem; color: green;"></i></td>
+            <td><i class="bi bi-check-circle" style="font-size: 2rem; color: green;"></i></td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Materialdownload</th>
+            <td><i class="bi bi-x-circle" style="font-size: 2rem; color: red;"></i></td>
+            <td><i class="bi bi-check-circle" style="font-size: 2rem; color: green;"></i></td>
+            <td><i class="bi bi-check-circle" style="font-size: 2rem; color: green;"></i></td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Teaminhalte</th>
+            <td><i class="bi bi-x-circle" style="font-size: 2rem; color: red;"></i></td>
+            <td><i class="bi bi-x-circle" style="font-size: 2rem; color: red;"></i></td>
+            <td><i class="bi bi-check-circle" style="font-size: 2rem; color: green;"></i></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="card" style="width: 18rem;">
-      <img src="./img/08.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
+  </main>
+
+</div>
+<!-- FOOTER -->
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between py-3 my-4 border-top text-center">
+    <div class="col-md-4">
+      <span class="text-muted">Datenschutz</span>
     </div>
-  </div>
+    <div class="col-md-4">
+      <span class="text-muted">Impressum</span>
+    </div>
+    <div class="col-md-4">
+      <span class="text-muted">© 2022 jugendarbeit.online</span>
+    </div>
+    <ul class="nav col-md-12 justify-content-center list-unstyled d-flex">
+      <li class="ms-3"><a href="#"><i class="bi bi-facebook"></i></a></li>
+      <li class="ms-3"><a href="#"><i class="bi bi-instagram"></i></a></li>
+      <li class="ms-3"><a href="#"><i class="bi bi-youtube"></i></a></li>
+      <li class="ms-3"><a href="#"><i class="bi bi-envelope"></i></a></li>
+    </ul>
+  </footer>
+</div>
+<!-- NIX -->
+
 
   <!-- Bootstrap Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="./js/carousel.js" charset="utf-8"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- Carousel Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 15,
+      nav: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000: {
+          items: 3
+        },
+        1400: {
+          items: 4
+        }
+      }
+    })
+  </script>
+  <!-- Tiny Slider 2 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+  <script>
+    var slider = tns({
+      container: '.my-slider',
+      "items": 1,
+      "controls": true,
+      "responsive": {
+        "600": {
+          "items": 2,
+          "edgePadding": 30
+        },
+        "1000": {
+          "items": 3
+        },
+        "1400": {
+          "items": 4
+        }
+      },
+      "swipeAngle": false,
+      "speed": 400
+    });
+  </script>
 </body>
 
 </html>
