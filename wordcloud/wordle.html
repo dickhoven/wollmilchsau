@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Wordle</title>
+  <style>
+    body {
+      position: relative;
+      font-family: "Helvetica Neue", sans-serif;
+      width: 960px;
+      margin: auto;
+      margin-bottom: 1em;
+      margin-top: 20px;
+    }
+
+    #presets a {
+      border-left: solid #666 1px;
+      padding: 0 10px;
+    }
+
+    #presets a.first {
+      border-left: none;
+    }
+
+    #keyword {
+      width: 300px;
+    }
+
+    #fetcher {
+      width: 500px;
+    }
+
+    #keyword,
+    #go {
+      font-size: 1.5em;
+    }
+
+    #text {
+      width: 100%;
+      height: 100px;
+    }
+
+    p.copy {
+      font-size: small;
+    }
+
+    #form {
+      font-size: small;
+      position: relative;
+    }
+
+    hr {
+      border: none;
+      border-bottom: solid #ccc 1px;
+    }
+
+    a.active {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      cursor: text;
+    }
+
+    #angles line,
+    #angles path,
+    #angles circle {
+      stroke: #666;
+    }
+
+    #angles text {
+      fill: #333;
+    }
+
+    #angles path.drag {
+      fill: #666;
+      cursor: move;
+    }
+
+    #angles {
+      text-align: center;
+      margin: 0 auto;
+      width: 350px;
+    }
+
+    #angles input,
+    #max {
+      width: 42px;
+    }
+  </style>
+
+</head>
+
+<body style="padding: 0px;">
+  <div id="vis"><svg width="960" height="600">
+      <g></g>
+      <g transform="translate(480,300)scale(1.0676156282424927,1.0676156282424927)"><text text-anchor="middle" transform="translate(37,-96)rotate(-29.999999999999993)"
+          style="font-size: 100px; font-family: Impact; fill: rgb(107, 110, 207);">ihr</text><text text-anchor="middle" transform="translate(-202,-141)rotate(-59.99999999999999)"
+          style="font-size: 100px; font-family: Impact; fill: rgb(156, 158, 222);">die</text><text text-anchor="middle" transform="translate(236,6)rotate(0)" style="font-size: 90px; font-family: Impact; fill: rgb(99, 121, 57);">Und</text><text
+          text-anchor="middle" transform="translate(82,17)rotate(29.999999999999993)" style="font-size: 79px; font-family: Impact; fill: rgb(140, 162, 82);">euch</text><text text-anchor="middle"
+          transform="translate(-173,-98)rotate(-29.999999999999993)" style="font-size: 44px; font-family: Impact; fill: rgb(181, 207, 107);">ist</text><text text-anchor="middle" transform="translate(17,76)rotate(-29.999999999999993)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(206, 219, 156);">deinen</text><text text-anchor="middle" transform="translate(73,141)rotate(-59.99999999999999)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(140, 109, 49);">aber</text><text text-anchor="middle" transform="translate(81,-145)rotate(59.99999999999999)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(189, 158, 57);">liebt</text><text text-anchor="middle" transform="translate(205,98)rotate(-59.99999999999999)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(231, 186, 82);">eure</text><text text-anchor="middle" transform="translate(14,142)rotate(-29.999999999999993)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(231, 203, 148);">Für</text><text text-anchor="middle" transform="translate(-125,-111)rotate(59.99999999999999)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(132, 60, 57);">im</text><text text-anchor="middle" transform="translate(-94,-187)rotate(29.999999999999993)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(173, 73, 74);">Himmel</text><text text-anchor="middle" transform="translate(169,-171)rotate(-29.999999999999993)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(214, 97, 107);">Denn</text><text text-anchor="middle" transform="translate(225,107)rotate(29.999999999999993)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(231, 150, 156);">er</text><text text-anchor="middle" transform="translate(-222,119)rotate(-59.99999999999999)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(123, 65, 115);">lässt</text><text text-anchor="middle" transform="translate(91,84)rotate(59.99999999999999)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(165, 81, 148);">über</text><text text-anchor="middle" transform="translate(-42,37)rotate(-59.99999999999999)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(206, 109, 189);">Menschen</text><text text-anchor="middle" transform="translate(60,-62)rotate(29.999999999999993)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(222, 158, 214);">auf</text><text text-anchor="middle" transform="translate(217,-115)rotate(0)" style="font-size: 44px; font-family: Impact; fill: rgb(57, 59, 121);">wenn</text><text
+          text-anchor="middle" transform="translate(147,-92)rotate(59.99999999999999)" style="font-size: 44px; font-family: Impact; fill: rgb(82, 84, 163);">nur</text><text text-anchor="middle"
+          transform="translate(223,145)rotate(-29.999999999999993)" style="font-size: 44px; font-family: Impact; fill: rgb(107, 110, 207);">da</text><text text-anchor="middle" transform="translate(-92,-21)rotate(-29.999999999999993)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(156, 158, 222);">Verhalten</text><text text-anchor="middle" transform="translate(139,160)rotate(-59.99999999999999)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(99, 121, 57);">sich</text><text text-anchor="middle" transform="translate(333,26)rotate(-59.99999999999999)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(140, 162, 82);">nicht</text><text text-anchor="middle" transform="translate(-185,-49)rotate(-29.999999999999993)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(181, 207, 107);">genauso</text><text text-anchor="middle" transform="translate(292,-201)rotate(-29.999999999999993)"
+          style="font-size: 44px; font-family: Impact; fill: rgb(206, 219, 156);">vollkommen</text><text text-anchor="middle" transform="translate(169,-149)rotate(-29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(140, 109, 49);">wisst</text><text text-anchor="middle" transform="translate(-113,-61)rotate(-29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(189, 158, 57);">dass</text><text text-anchor="middle" transform="translate(117,-99)rotate(-59.99999999999999)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(231, 186, 82);">gesagt</text><text text-anchor="middle" transform="translate(-124,-149)rotate(-59.99999999999999)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(231, 203, 148);">worden</text><text text-anchor="middle" transform="translate(-101,52)rotate(0)" style="font-size: 10px; font-family: Impact; fill: rgb(132, 60, 57);">Liebe</text><text
+          text-anchor="middle" transform="translate(-70,-90)rotate(29.999999999999993)" style="font-size: 10px; font-family: Impact; fill: rgb(173, 73, 74);">Nächsten</text><text text-anchor="middle"
+          transform="translate(100,131)rotate(29.999999999999993)" style="font-size: 10px; font-family: Impact; fill: rgb(214, 97, 107);">hasse</text><text text-anchor="middle" transform="translate(-170,-140)rotate(29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(231, 150, 156);">Feind</text><text text-anchor="middle" transform="translate(185,156)rotate(59.99999999999999)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(123, 65, 115);">Ich</text><text text-anchor="middle" transform="translate(-224,41)rotate(0)" style="font-size: 10px; font-family: Impact; fill: rgb(165, 81, 148);">sage</text><text
+          text-anchor="middle" transform="translate(-138,-52)rotate(29.999999999999993)" style="font-size: 10px; font-family: Impact; fill: rgb(206, 109, 189);">Feinde</text><text text-anchor="middle"
+          transform="translate(173,56)rotate(29.999999999999993)" style="font-size: 10px; font-family: Impact; fill: rgb(222, 158, 214);">Betet</text><text text-anchor="middle" transform="translate(-152,91)rotate(-59.99999999999999)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(57, 59, 121);">verfolgen</text><text text-anchor="middle" transform="translate(255,121)rotate(0)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(82, 84, 163);">werdet</text><text text-anchor="middle" transform="translate(-64,100)rotate(59.99999999999999)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(107, 110, 207);">zu</text><text text-anchor="middle" transform="translate(61,72)rotate(-59.99999999999999)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(156, 158, 222);">Kindern</text><text text-anchor="middle" transform="translate(84,-111)rotate(-59.99999999999999)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(99, 121, 57);">eures</text><text text-anchor="middle" transform="translate(-26,54)rotate(-29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(140, 162, 82);">Vaters</text><text text-anchor="middle" transform="translate(125,59)rotate(59.99999999999999)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(181, 207, 107);">seine</text><text text-anchor="middle" transform="translate(84,159)rotate(29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(206, 219, 156);">Sonne</text><text text-anchor="middle" transform="translate(4,6)rotate(29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(140, 109, 49);">aufgehen</text><text text-anchor="middle" transform="translate(110,-57)rotate(-29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(189, 158, 57);">bösen</text><text text-anchor="middle" transform="translate(-77,-10)rotate(59.99999999999999)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(231, 186, 82);">guten</text><text text-anchor="middle" transform="translate(148,-140)rotate(-29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(231, 203, 148);">es</text><text text-anchor="middle" transform="translate(116,-37)rotate(59.99999999999999)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(132, 60, 57);">regnen</text><text text-anchor="middle" transform="translate(220,-96)rotate(29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(173, 73, 74);">gerechte</text><text text-anchor="middle" transform="translate(34,23)rotate(-29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(214, 97, 107);">ungerechte</text><text text-anchor="middle" transform="translate(123,-47)rotate(59.99999999999999)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(231, 150, 156);">auch</text><text text-anchor="middle" transform="translate(-55,-109)rotate(-29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(123, 65, 115);">lieben</text><text text-anchor="middle" transform="translate(38,99)rotate(0)" style="font-size: 10px; font-family: Impact; fill: rgb(165, 81, 148);">Welchen</text><text
+          text-anchor="middle" transform="translate(148,-19)rotate(-59.99999999999999)" style="font-size: 10px; font-family: Impact; fill: rgb(206, 109, 189);">Lohn</text><text text-anchor="middle" transform="translate(-176,-21)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(222, 158, 214);">erwartet</text><text text-anchor="middle" transform="translate(-91,-147)rotate(-29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(57, 59, 121);">von</text><text text-anchor="middle" transform="translate(135,-81)" style="font-size: 10px; font-family: Impact; fill: rgb(82, 84, 163);">Gott</text><text
+          text-anchor="middle" transform="translate(-97,11)" style="font-size: 10px; font-family: Impact; fill: rgb(107, 110, 207);">Zolleinnehmer</text><text text-anchor="middle" transform="translate(-94,-74)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(156, 158, 222);">Geschwister</text><text text-anchor="middle" transform="translate(148,-47)rotate(0)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(99, 121, 57);">grüßt</text><text text-anchor="middle" transform="translate(-210,118)rotate(29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(140, 162, 82);">tut</text><text text-anchor="middle" transform="translate(-67,-132)rotate(-29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(181, 207, 107);">Besonderes</text><text text-anchor="middle" transform="translate(-57,122)rotate(29.999999999999993)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(206, 219, 156);">Heiden</text><text text-anchor="middle" transform="translate(183,25)rotate(0)" style="font-size: 10px; font-family: Impact; fill: rgb(140, 109, 49);">gilt</text><text
+          text-anchor="middle" transform="translate(258,137)rotate(-59.99999999999999)" style="font-size: 10px; font-family: Impact; fill: rgb(189, 158, 57);">Seid</text><text text-anchor="middle"
+          transform="translate(-219,148)rotate(-29.999999999999993)" style="font-size: 10px; font-family: Impact; fill: rgb(231, 186, 82);">wie</text><text text-anchor="middle" transform="translate(40,81)rotate(-59.99999999999999)"
+          style="font-size: 10px; font-family: Impact; fill: rgb(231, 203, 148);">euer</text><text text-anchor="middle" transform="translate(-190,107)rotate(0)" style="font-size: 10px; font-family: Impact; fill: rgb(132, 60, 57);">Vater</text></g>
+    </svg></div>
+
+  <form id="form">
+
+    <p style="position: absolute; right: 0px; top: 0px; display: none;" id="status">71/71</p>
+
+    <div style="text-align: center">
+      <div id="presets"></div>
+      <div id="custom-area">
+        <p><label for="text">Paste your text below!</label>
+        </p>
+        <p><textarea id="text">How the Word Cloud Generator Works
+
+The layout algorithm for positioning words without overlap is available on GitHub under an open source license as d3-cloud. Note that this is the only the layout algorithm and any code for converting text into words and rendering the final output requires additional development.
+
+As word placement can be quite slow for more than a few hundred words, the layout algorithm can be run asynchronously, with a configurable time step size. This makes it possible to animate words as they are placed without stuttering. It is recommended to always use a time step even without animations as it prevents the browser’s event loop from blocking while placing the words.
+
+The layout algorithm itself is incredibly simple. For each word, starting with the most “important”:
+
+Attempt to place the word at some starting point: usually near the middle, or somewhere on a central horizontal line.
+If the word intersects with any previously placed words, move it one step along an increasing spiral. Repeat until no intersections are found.
+The hard part is making it perform efficiently! According to Jonathan Feinberg, Wordle uses a combination of hierarchical bounding boxes and quadtrees to achieve reasonable speeds.
+
+Glyphs in JavaScript
+
+There isn’t a way to retrieve precise glyph shapes via the DOM, except perhaps for SVG fonts. Instead, we draw each word to a hidden canvas element, and retrieve the pixel data.
+
+Retrieving the pixel data separately for each word is expensive, so we draw as many words as possible and then retrieve their pixels in a batch operation.
+
+Sprites and Masks
+
+My initial implementation performed collision detection using sprite masks. Once a word is placed, it doesn't move, so we can copy it to the appropriate position in a larger sprite representing the whole placement area.
+
+The advantage of this is that collision detection only involves comparing a candidate sprite with the relevant area of this larger sprite, rather than comparing with each previous word separately.
+
+Somewhat surprisingly, a simple low-level hack made a tremendous difference: when constructing the sprite I compressed blocks of 32 1-bit pixels into 32-bit integers, thus reducing the number of checks (and memory) by 32 times.
+
+In fact, this turned out to beat my hierarchical bounding box with quadtree implementation on everything I tried it on (even very large areas and font sizes). I think this is primarily because the sprite version only needs to perform a single collision test per candidate area, whereas the bounding box version has to compare with every other previously placed word that overlaps slightly with the candidate area.
+
+Another possibility would be to merge a word’s tree with a single large tree once it is placed. I think this operation would be fairly expensive though compared with the analagous sprite mask operation, which is essentially ORing a whole block.
+
+    </textarea>
+          <button id="go" type="submit">Go!</button>
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div style="float: right; text-align: right">
+      <p><label for="max">Number of words:</label> <input type="number" value="250" min="1" id="max">
+      </p>
+      <p><label for="per-line"><input type="checkbox" id="per-line"> One word per line</label>
+        <!--<p><label for="colours">Colours:</label> <a href="#" id="random-palette">get random palette</a>-->
+      </p>
+      <p><label>Download:</label>
+        <button id="download-svg">SVG</button>
+        <!-- |
+    <a id="download-png" href="#">PNG</a>-->
+      </p>
+    </div>
+
+    <div style="float: left">
+      <p><label>Spiral:</label>
+        <label for="archimedean"><input type="radio" name="spiral" id="archimedean" value="archimedean" checked="checked"> Archimedean</label>
+        <label for="rectangular"><input type="radio" name="spiral" id="rectangular" value="rectangular"> Rectangular</label>
+      </p>
+      <p><label for="scale">Scale:</label>
+        <label for="scale-log"><input type="radio" name="scale" id="scale-log" value="log" checked="checked"> log n</label>
+        <label for="scale-sqrt"><input type="radio" name="scale" id="scale-sqrt" value="sqrt"> √n</label>
+        <label for="scale-linear"><input type="radio" name="scale" id="scale-linear" value="linear"> n</label>
+      </p>
+      <p><label for="font">Font:</label> <input type="text" id="font" value="Impact">
+      </p>
+    </div>
+
+    <div id="angles">
+      <p><input type="number" id="angle-count" value="5" min="1"> <label for="angle-count">orientations</label>
+        <label for="angle-from">from</label> <input type="number" id="angle-from" value="-60" min="-90" max="90"> °
+        <label for="angle-to">to</label> <input type="number" id="angle-to" value="60" min="-90" max="90"> °
+      </p><svg width="151" height="70.5">
+        <g transform="translate(75.5,60.5)">
+          <path d="M -40.5 0 A 40.5 40.5 0 0 1 40.5 0" style="fill: none;"></path>
+          <line x1="-47.5" x2="47.5"></line>
+          <line y2="-47.5"></line><text dy=".3em" text-anchor="end" transform="rotate(0)translate(-50.5)rotate(0)translate(2)">-90°</text><text text-anchor="middle" transform="rotate(90)translate(-50.5)rotate(-90)translate(2)">0°</text><text
+            dy=".3em" text-anchor="start" transform="rotate(180)translate(-50.5)rotate(-180)translate(2)">90°</text>
+          <path class="angle" d="M-35.07402885326976,-20.250000000000014A40.5,40.5 0 0,1 35.074028853269766,-20.25L0,0Z" style="fill: rgb(255, 204, 0);"></path>
+          <line class="angle" transform="rotate(30)" x2="-45.5"></line>
+          <line class="angle" transform="rotate(60)" x2="-40.5"></line>
+          <line class="angle" transform="rotate(90)" x2="-40.5"></line>
+          <line class="angle" transform="rotate(120)" x2="-40.5"></line>
+          <line class="angle" transform="rotate(150)" x2="-45.5"></line>
+          <path class="drag" d="M-9.5,0L-3,3.5L-3,-3.5Z" transform="rotate(30)translate(-40.5)"></path>
+          <path class="drag" d="M-9.5,0L-3,3.5L-3,-3.5Z" transform="rotate(150)translate(-40.5)"></path>
+        </g>
+      </svg>
+    </div>
+
+    <hr style="clear: both">
+
+    <p style="float: right"><a href="about/">How the Word Cloud Generator Works</a>.
+    </p>
+    <p style="float: left">Copyright © <a href="http://www.jasondavies.com/">Jason Davies</a> | <a href="../privacy/">Privacy Policy</a>. The generated word clouds may be used for any purpose.
+
+    </p>
+  </form>
+
+
+
+  <script src="../d3.min.js"></script>
+  <script src="cloud.min.js"></script>
+
+
+</body>
+
+</html>
